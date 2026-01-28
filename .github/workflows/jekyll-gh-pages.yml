@@ -2,7 +2,7 @@ name: Deploy Vite app to GitHub Pages
 
 on:
   push:
-    branches: ["master", "main"]  # Можно добавить main, если используется
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -29,10 +29,10 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci  # Более строгая установка, чем npm install
+        run: npm install
       
       - name: Build project
-        run: npm run build  # Стандартная команда для Vite
+        run: npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
